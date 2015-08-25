@@ -1,19 +1,19 @@
-Template.registerHelper("location", function () {
-    return Geolocation.latLng() || { lat: 0, lng: 0 };
-});
-
-Template.registerHelper("locationError", function () {
-    return Geolocation.error;
-});
-
-Template.registerHelper("geo", function () {
-	var geo = Geolocation.latLng() || { lat: 0, lng: 0 };
-
-	if(geo.lat !== 0){
-		var infos = Meteor.call('locationName', geo.lat, geo.lng, function(err, res){
-			console.log(res[0]);
-			return res[0];
-		});
+Template.registerHelper("userGeo", function () {
+	
+	if(Session.get('geolocation') === null){
+		var geo = Geolocation.latLng() || { lat: 0, lng: 0 };
+		
+		if(geo.lat !== 0){
+			Meteor.call('locationInfos', geo.lat, geo.lng, function(err, res){
+				Session.set('geolocation', res[0]);
+			});
+		}
 	}
+
+	return Session.get('geolocation');
+
 });
 
+Template.registerHelper('toJson', function (obj){
+	return JSON.stringify(obj);
+});

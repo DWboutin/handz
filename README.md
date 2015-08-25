@@ -7,3 +7,4 @@ materialize:materialize
 fourseven:scss
 mdg:geolocation
 aldeed:geocoder
+reactive-var

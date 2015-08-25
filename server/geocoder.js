@@ -1,6 +1,6 @@
 Meteor.methods({
-  locationName: function(lat, lng){
-    console.log(lat, lng);
+  locationInfos: function(lat, lng){
+
     var geo = new GeoCoder({
       geocoderProvider: configs.geocoder.geocoderProvider,
       httpAdapter: configs.geocoder.httpAdapter,
