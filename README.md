@@ -5,3 +5,5 @@ A meteor app for self-learning
 iron:router
 materialize:materialize
 fourseven:scss
+mdg:geolocation
+aldeed:geocoder
