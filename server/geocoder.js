@@ -1,14 +1,16 @@
 Meteor.methods({
   locationInfos: function(lat, lng){
 
-    var geo = new GeoCoder({
-      geocoderProvider: configs.geocoder.geocoderProvider,
-      httpAdapter: configs.geocoder.httpAdapter,
-      apiKey: configs.geocoder.apiKey
-    });
+    var reverseGeocoding = Geo.reverse(lat, lng);
 
-    var reverseGeocoding = geo.reverse(lat, lng);
-    
     return reverseGeocoding;
+
+  },
+  locationFromAddress: function(address){
+
+  	var addressInfos = Geo.geocode(address);
+
+  	return addressInfos;
+
   }
 });

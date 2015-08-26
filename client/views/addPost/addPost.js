@@ -1,6 +1,7 @@
 Template.addPost.onRendered(function(){
 	$('select').material_select();
 	$('#needs').characterCounter();
+    $('.modal-trigger').leanModal();
 });
 
 Template.addPost.events({
@@ -16,7 +17,10 @@ Template.addPost.events({
 		var val = tmpl.find('#needs').value;
 
 		if(val.length <= 0){
-			form.removeAttr('style');
+			form.css({
+                height: 'auto',
+                overflow: 'visible'
+            });
 		}
 	},
 	'submit form': function(evt, tmpl){
@@ -61,6 +65,6 @@ Template.addPost.events({
 			infos: infos
     	};
     	
-    	Meteor.call('addPost', newPost);
+        Meteor.call('addPost', newPost);
 	}
 });

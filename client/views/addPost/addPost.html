@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col s12">
+      <div class="col s9">
         {{#with userGeo}}
           <input id="location" name="location" type="text" class="validate" disabled value="{{city}}, {{stateCode}}, {{countryCode}}">
           <input name="latitude" type="hidden" value="{{latitude}}">
@@ -27,6 +27,7 @@
         <input name="infos" type="hidden" value="{{toJson userGeo}}">
         <label for="location">Location</label>
       </div>
+      <div class="col s3"><a href="#changeLocationModal" class="modal-trigger">Change</a></div>
     </div>
     <div class="row">
       <div class="col s12 center-align">
@@ -34,4 +35,24 @@
       </div>
     </div>
   </form>
+  {{> changeLocationModal}}
+</template>
+
+<template name="changeLocationModal">
+  <div id="changeLocationModal" class="modal bottom-sheet">
+    <div class="modal-content">
+      <h4>Enter your full address</h4>
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="changeAddress" name="changeAddress" type="text" class="validate">
+            <label for="changeAddress">Your address</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+    </div>
+  </div>
 </template>
