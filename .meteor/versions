@@ -31,6 +31,7 @@ jquery@1.11.3_2
 json@1.0.3
 launch-screen@1.0.2
 livedata@1.0.13
+logandk:validator@3.34.0
 logging@1.0.7
 materialize:materialize@0.97.0
 mdg:geolocation@1.0.3

@@ -8,3 +8,4 @@ fourseven:scss
 mdg:geolocation
 aldeed:geocoder
 reactive-var
+logandk:validator
