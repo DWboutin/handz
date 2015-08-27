@@ -1,0 +1,15 @@
+<template name="feed">
+	<div class="collection">
+		
+		{{#each posts}}
+			{{> post}}
+		{{/each}}
+
+	</div>
+</template>
+
+<template name="post">
+	<article class="collection-item">
+		<span class="title">{{content}} {{createdAt}}</span>
+	</article>
+</template>

@@ -65,6 +65,21 @@ Template.addPost.events({
 			infos: infos
     	};
     	
-        Meteor.call('addPost', newPost);
+        Meteor.call('addPost', newPost, function(){
+            needs = '';
+        });
 	}
+});
+
+Template.changeLocationModal.events({
+    'click #changeLocationOk': function(evt, tmpl){
+
+        var address = tmpl.find('#changeAddress').value;
+
+        if(address.length > 0){
+            Meteor.call('locationFromAddress', address, function (err, res) {
+                Session.set('geolocation', res[0]);
+            });
+        }
+    }
 });

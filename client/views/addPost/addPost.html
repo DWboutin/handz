@@ -42,17 +42,16 @@
   <div id="changeLocationModal" class="modal bottom-sheet">
     <div class="modal-content">
       <h4>Enter your full address</h4>
-      <form>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="changeAddress" name="changeAddress" type="text" class="validate">
-            <label for="changeAddress">Your address</label>
-          </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="changeAddress" name="changeAddress" type="text" class="validate">
+          <label for="changeAddress">Your address</label>
         </div>
-      </form>
+      </div>
     </div>
     <div class="modal-footer">
-      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#" id="changeLocationOk" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
     </div>
   </div>
 </template>
