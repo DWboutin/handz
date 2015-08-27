@@ -14,6 +14,14 @@ Template.registerHelper("userGeo", function () {
 
 });
 
-Template.registerHelper('toJson', function (obj){
+Template.registerHelper('jsonToString', function (obj){
 	return JSON.stringify(obj);
+});
+
+Template.registerHelper('dateAgo', function (date){
+	return moment(date).fromNow();
+});
+
+Template.registerHelper('formatDate', function (date){
+	return moment(date).format(configs.date.displayFormat);
 });

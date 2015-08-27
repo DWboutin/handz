@@ -9,3 +9,4 @@ A meteor app for self-learning
 - aldeed:geocoder
 - reactive-var
 - logandk:validator
+- momentjs:moment

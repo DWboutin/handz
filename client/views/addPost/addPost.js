@@ -9,7 +9,10 @@ Template.addPost.events({
 		var el = $(evt.currentTarget);
 		var form = el.closest('form');
 
-		form.css('height','auto');
+		form.css({
+            height: 'auto',
+            overflow: 'visible'
+        });
 	},
 	'blur #needs': function(evt, tmpl){
 		var el = $(evt.currentTarget);
@@ -17,10 +20,7 @@ Template.addPost.events({
 		var val = tmpl.find('#needs').value;
 
 		if(val.length <= 0){
-			form.css({
-                height: 'auto',
-                overflow: 'visible'
-            });
+			form.removeAttr('style');
 		}
 	},
 	'submit form': function(evt, tmpl){

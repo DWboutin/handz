@@ -24,7 +24,7 @@
           <input name="latitude" type="hidden" value="{{latitude}}">
           <input name="longitude" type="hidden" value="{{longitude}}">
         {{/with}}
-        <input name="infos" type="hidden" value="{{toJson userGeo}}">
+        <input name="infos" type="hidden" value="{{jsonToString userGeo}}">
         <label for="location">Location</label>
       </div>
       <div class="col s3"><a href="#changeLocationModal" class="modal-trigger">Change</a></div>
