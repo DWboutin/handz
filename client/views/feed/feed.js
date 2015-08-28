@@ -10,3 +10,10 @@ Template.feed.helpers({
 	}
 });
 
+Template.post.events({
+	'click .delete': function(evt, tmpl){
+		evt.preventDefault();
+		
+		Meteor.call('deletePost', this._id);
+	}
+});
