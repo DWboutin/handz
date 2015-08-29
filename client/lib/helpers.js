@@ -25,3 +25,7 @@ Template.registerHelper('dateAgo', function (date){
 Template.registerHelper('formatDate', function (date){
 	return moment(date).format(configs.date.displayFormat);
 });
+
+Template.registerHelper('roundKm', function (km){
+	return Math.round(km);
+});
