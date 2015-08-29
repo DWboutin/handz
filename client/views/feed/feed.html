@@ -1,17 +1,17 @@
 <template name="feed">
-	<div class="collection">
-		
-		{{#each posts}}
-			{{> post}}
-		{{/each}}
+  <div class="collection">
+    
+    {{#each posts}}
+      {{> post}}
+    {{/each}}
 
-	</div>
+  </div>
 </template>
 
 <template name="post">
-	<article class="collection-item">
-		<span class="title">{{content}} {{formatDate createdAt}}</span>
-		<span class="title">{{roundKm km}}km</span>
-		<a href="#" class="delete align-right">Delete</a>
-	</article>
+  <article class="collection-item">
+    <span class="title">{{content}} {{formatDate createdAt}}</span>
+    <span class="title">{{roundKm km}}km</span>
+    <a href="#" class="delete align-right">Delete</a>
+  </article>
 </template>

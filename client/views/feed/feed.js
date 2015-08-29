@@ -17,28 +17,28 @@ function deg2rad(deg) {
 }
 
 Template.feed.helpers({
-	'posts': function(){
-		return Posts.find({}, {sort: {createdAt: -1}}).map(function(post){
+  'posts': function(){
+    return Posts.find({}, {sort: {createdAt: -1}}).map(function(post){
 
-			var sessionGeo = Session.get('geolocation');
-			var postGeo = post;
+      var sessionGeo = Session.get('geolocation');
+      var postGeo = post;
 
-			// transform json string to object
-	      	post.infos = JSON.parse(post.infos);
+      // transform json string to object
+          post.infos = JSON.parse(post.infos);
 
-	      	post.km = getDistanceFromLatLonInKm(sessionGeo, postGeo);
-	      	
-	      	return post;
+          post.km = getDistanceFromLatLonInKm(sessionGeo, postGeo);
+          
+          return post;
     }).sort(function(doc1, doc2) { 
-	    return doc1.km - doc2.km
-	  }) ;
-	}
+      return doc1.km - doc2.km
+    }) ;
+  }
 });
 
 Template.post.events({
-	'click .delete': function(evt, tmpl){
-		evt.preventDefault();
-		
-		Meteor.call('deletePost', this._id);
-	}
+  'click .delete': function(evt, tmpl){
+    evt.preventDefault();
+    
+    Meteor.call('deletePost', this._id);
+  }
 });

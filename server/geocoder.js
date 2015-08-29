@@ -8,9 +8,9 @@ Meteor.methods({
   },
   locationFromAddress: function(address){
 
-  	var addressInfos = Geo.geocode(address);
+    var addressInfos = Geo.geocode(address);
 
-  	return addressInfos;
+    return addressInfos;
 
   }
 });

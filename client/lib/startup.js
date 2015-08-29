@@ -1,3 +1,3 @@
 Meteor.startup(function () {
-	Session.setDefault('geolocation', null);
+  Session.setDefault('geolocation', null);
 });
