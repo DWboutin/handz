@@ -1,5 +1,5 @@
 <template name="feed">
-  <div class="collection">
+  <div class="collection feed">
     
     {{#each posts}}
       {{> post}}
@@ -10,8 +10,24 @@
 
 <template name="post">
   <article class="collection-item">
-    <span class="title">{{content}} {{formatDate createdAt}}</span>
-    <span class="title">{{roundKm km}}km</span>
-    <a href="#" class="delete align-right">Delete</a>
+    <header class="title row">
+      <h1 class="col s12">{{content}}</h1>
+    </header>
+    <footer>
+      <div class="row">
+        <div class="col s10 infos">
+          <span class="date">
+            {{dateAgo createdAt}}
+          </span>
+          at 
+          <span class="distance">
+            {{roundKm km}}km away
+          </span>
+        </div>
+        <div class="col s2 delete right-align"><a href="#" class="delete"><i class="material-icons">delete</i></a></div>
+      </div>
+    </footer>
+    
+    
   </article>
 </template>
